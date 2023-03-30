@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-const Button = () => {
+interface Props{
+    children: ReactNode;
+    color?: string;
+    onClick: () => void;
+}
+
+const Button = ({children, color = 'primary', onClick}: Props) => {
   return (
-    <button className="btn btn-info">Butt</button>
+    <button className={'btn btn-' + color} onClick={onClick}>{children}</button>
   )
 }
 
